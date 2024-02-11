@@ -5,26 +5,9 @@ return {
 		event = "BufReadPre",
 		opts = {},
 	},
-
-	-- LazyGit integration with Telescope
-	{
-		"kdheepak/lazygit.nvim",
-		keys = {
-			{
-				";c",
-				":LazyGit<Return>",
-				silent = true,
-				noremap = true,
-			},
-		},
-		-- optional for floating window border decoration
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-		},
-	},
-
 	{
 		"telescope.nvim",
+		priority = 1000,
 		dependencies = {
 			{
 				"nvim-telescope/telescope-fzf-native.nvim",
@@ -33,15 +16,6 @@ return {
 			"nvim-telescope/telescope-file-browser.nvim",
 		},
 		keys = {
-			{
-				"<leader>fP",
-				function()
-					require("telescope.builtin").find_files({
-						cwd = require("lazy.core.config").options.root,
-					})
-				end,
-				desc = "Find Plugin File",
-			},
 			{
 				";f",
 				function()
@@ -68,14 +42,6 @@ return {
 					builtin.buffers()
 				end,
 				desc = "Lists open buffers",
-			},
-			{
-				";t",
-				function()
-					local builtin = require("telescope.builtin")
-					builtin.help_tags()
-				end,
-				desc = "Lists available help tags and opens a new window with the relevant help info on <cr>",
 			},
 			{
 				";;",
@@ -181,43 +147,6 @@ return {
 			telescope.setup(opts)
 			require("telescope").load_extension("fzf")
 			require("telescope").load_extension("file_browser")
-		end,
-	},
-	{
-		"nvim-tree/nvim-tree.lua",
-		config = function()
-			require("nvim-tree").setup({
-				sort = {
-					sorter = "case_sensitive",
-				},
-				view = {
-					width = 30,
-					relativenumber = true,
-				},
-				renderer = {
-					group_empty = true,
-				},
-				filters = {
-					dotfiles = true,
-					custom = {
-						"node_modules/.*",
-					},
-				},
-				log = {
-					enable = true,
-					truncate = true,
-					types = {
-						diagnostics = true,
-						git = true,
-						profile = true,
-						watcher = true,
-					},
-				},
-			})
-
-			if vim.fn.argc(-1) == 0 then
-				vim.cmd("NvimTreeFocus")
-			end
 		end,
 	},
 }

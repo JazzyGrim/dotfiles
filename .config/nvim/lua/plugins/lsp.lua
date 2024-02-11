@@ -60,13 +60,6 @@ return {
 					},
 				},
 				html = {},
-				yamlls = {
-					settings = {
-						yaml = {
-							keyOrdering = false,
-						},
-					},
-				},
 				lua_ls = {
 					-- enabled = false,
 					single_file_support = true,

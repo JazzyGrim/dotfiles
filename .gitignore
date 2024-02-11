@@ -1,0 +1,8 @@
+*
+
+!.gitignore
+
+!.config/nvim/**/*
+!.config/tmux/tmux.conf
+!README.md
+!images/*

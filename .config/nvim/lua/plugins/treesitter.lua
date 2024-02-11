@@ -3,14 +3,20 @@ return {
 
 	{
 		"nvim-treesitter/nvim-treesitter",
+		tag = "v0.9.1",
 		opts = {
 			ensure_installed = {
+				"javascript",
+				"typescript",
 				"css",
 				"gitignore",
 				"graphql",
 				"http",
+				"json",
 				"scss",
 				"sql",
+				"vim",
+				"lua",
 			},
 
 			-- matchup = {
@@ -43,16 +49,5 @@ return {
 				},
 			},
 		},
-		config = function(_, opts)
-			require("nvim-treesitter.configs").setup(opts)
-
-			-- MDX
-			vim.filetype.add({
-				extension = {
-					mdx = "mdx",
-				},
-			})
-			vim.treesitter.language.register("markdown", "mdx")
-		end,
 	},
 }
