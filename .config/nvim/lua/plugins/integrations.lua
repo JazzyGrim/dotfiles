@@ -1,8 +1,5 @@
 return {
 	{
-		"tpope/vim-dadbod",
-	},
-	{
 		"rest-nvim/rest.nvim",
 		dependencies = { { "nvim-lua/plenary.nvim" } },
 		config = function()
