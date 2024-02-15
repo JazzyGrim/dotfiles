@@ -3,6 +3,7 @@
 !.gitignore
 
 !.config/nvim/**/*
+!.config/nvim/lua/config/plugins/**/*
 !.config/tmux/tmux.conf
 !README.md
 !images/*
