@@ -4,8 +4,6 @@ return {
 		"williamboman/mason.nvim",
 		opts = function(_, opts)
 			vim.list_extend(opts.ensure_installed, {
-				"stylua",
-				"selene",
 				"luacheck",
 				"shellcheck",
 				"shfmt",
@@ -128,5 +126,12 @@ return {
 			},
 			setup = {},
 		},
+	},
+	{
+		"nvim-cmp",
+		dependencies = { "hrsh7th/cmp-emoji" },
+		opts = function(_, opts)
+			table.insert(opts.sources, { name = "emoji" })
+		end,
 	},
 }
