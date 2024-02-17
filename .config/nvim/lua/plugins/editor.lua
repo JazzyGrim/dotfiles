@@ -125,9 +125,6 @@ return {
 							-- your custom normal mode mappings
 							["N"] = fb_actions.create,
 							["h"] = fb_actions.goto_parent_dir,
-							["/"] = function()
-								vim.cmd("startinsert")
-							end,
 							["<C-u>"] = function(prompt_bufnr)
 								for i = 1, 10 do
 									actions.move_selection_previous(prompt_bufnr)
@@ -138,8 +135,6 @@ return {
 									actions.move_selection_next(prompt_bufnr)
 								end
 							end,
-							["<PageUp>"] = actions.preview_scrolling_up,
-							["<PageDown>"] = actions.preview_scrolling_down,
 						},
 					},
 				},

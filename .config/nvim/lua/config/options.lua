@@ -16,7 +16,6 @@ vim.opt.cmdheight = 0
 vim.opt.laststatus = 0
 vim.opt.expandtab = true
 vim.opt.scrolloff = 10
-vim.opt.backupskip = { "/tmp/*", "/private/tmp/*" }
 vim.opt.inccommand = "split"
 vim.opt.ignorecase = true
 vim.opt.smarttab = true
