@@ -1,5 +1,5 @@
 return {
-	-- Hihglight colors
+	-- Highlight colors
 	{
 		"echasnovski/mini.hipatterns",
 		event = "BufReadPre",
